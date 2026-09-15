@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 font-body text-slate-300 antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 0%, rgba(34, 211, 238, 0.06), transparent);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-slate-100;
+  }
+  ::selection {
+    @apply bg-violet-500/50 text-white;
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+/* ---------- scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #04060d;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #312e81, #155e75);
+  border-radius: 9999px;
+  border: 2px solid #04060d;
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/[0.035] backdrop-blur-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-amber {
+    @apply bg-gradient-to-r from-amber-300 via-orange-400 to-rose-400 bg-clip-text text-transparent;
+  }
+
+  .grid-bg {
+    background-image: radial-gradient(rgba(139, 92, 246, 0.18) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* cut two opposite corners — signature "vote-slip" shape */
+  .clip-angled {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 22px) 0,
+      100% 22px,
+      100% 100%,
+      22px 100%,
+      0 calc(100% - 22px)
+    );
+  }
+
+  .clip-tag {
+    clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  }
+
+  .input-base {
+    @apply w-full rounded-xl border border-white/10 bg-white/[0.05] px-4 py-2.5 text-sm text-slate-100 outline-none transition placeholder:text-slate-500;
+  }
+  .input-base:focus {
+    @apply border-violet-400/60 ring-2 ring-violet-400/20;
+  }
+  .input-error {
+    @apply border-rose-500/60 ring-2 ring-rose-500/15;
+  }
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
