@@ -11,7 +11,6 @@ export default function Footer() {
           </p>
           <p className="mt-2 max-w-xs text-xs leading-relaxed text-slate-500">
             A blockchain-based secure voting system with AI-driven cyberattack detection.
-            Built as a B.Tech final-year project.
           </p>
         </div>
         <div className="text-xs text-slate-500">
@@ -39,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/[0.05] py-4 text-center text-[11px] text-slate-600">
-        © 2026 SecureVote · B.Tech Project · Demo frontend — all data is mocked
+        © 2026 SecureVote · Demo frontend — all data is mocked
       </div>
     </footer>
   )
