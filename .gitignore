@@ -19,3 +19,6 @@ npm-debug.log*
 # env
 .env
 .env.local
+# hardhat (backend)
+backend/artifacts/
+backend/cache/
